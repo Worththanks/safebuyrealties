@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works – Safe Buy Realties</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+  
+  <style>
+    /* =============== THEME TOKENS =============== */
+    :root {
+      --primary: #4fffb0;
+      --text: #e0e0e0;
+      --text-muted: #aaaaaa;
+      --bg-dark: #0a0e17;
+      --card-glass: rgba(255, 255, 255, 0.07);
+      --border-glass: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* =============== NAVBAR (POLISHED) =============== */
+    .navbar {
+      padding: 1.5rem 0;
+      background: rgba(10, 14, 23, 0.95);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .logo-badge {
+      background: var(--primary);
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #000;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.98rem;
+    }
+
+    .nav-link.active {
+      color: var(--primary);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.6rem;
+      cursor: pointer;
+}
+
+.hero-banner {
+      padding: 10rem 0 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* =============== RESPONSIVE =============== */
+    @media (max-width: 968px) {
+      .hero-banner {
+        padding: 8rem 0 4rem;
+        text-align: center;
+      }
+
+      .hero-content-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .hero-heading {
+        font-size: 3.2rem;
+      }
+
+      .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-card-glass {
+        justify-self: center;
+        max-width: 90%;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-actions-main {
+        align-items: center;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0a0e17;
+        padding: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-actions-main {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .hero-cta {
+        min-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- ========================= NAVBAR ========================= -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">SB</span>
+        <span class="logo-text">Safe Buy Realties</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="btn-outline">Home</a>
+        <a href="listings.html" class="btn-outline">Listings</a>
+        <a href="how-it-works.html" class="btn-outline">How It Works</a>
+        <a href="about.html" class="btn-outline">About</a>
+        <div class="nav-item dropdown">
+          <button class="btn-outline">Register</button>
+          <div class="dropdown-menu">
+            <a href="register.html#seller">Register as a Seller</a>
+            <a href="register.html#buyer">Register as a Buyer</a>
+            <a href="register.html#professional">Register as a Professional</a>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-outline">Contact</a>
+        <a href="login.html" class="btn-outline">Login</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    </div>
+  </header>
+
+  <main>
+
+
+  <!-- HERO -->
+  <section class="section soft-bg">
+    <div class="container section-header">
+      <h2>How Safe Buy Realties Works</h2>
+      <p>
+        A structured, legally supervised workflow for sellers, buyers, tenants
+        and professionals.
+      </p>
+    </div>
+  </section>
+
+   <!-- ========================= STEP-BY-STEP ========================= -->
+    <section class="section section-dark" style="padding: 6rem 0; background: #0d131f;">
+      <div class="container">
+        <div class="hero-card hero-card-wide" style="background: var(--card-glass); backdrop-filter: blur(12px); border-radius: 20px; padding: 3rem; border: 1px solid var(--border-glass); text-align: center; max-width: 1000px; margin: 0 auto;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Supervised Real Estate, Step by Step</h2>
+          <p class="hero-card-tag" style="color: var(--primary); margin-bottom: 2rem;">Supervised • Verified • Documented</p>
+          <ul style="text-align: left; max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.1rem; color: var(--text-muted);">
+            <li>Vendors upload title documents, surveys and approvals for review.</li>
+            <li>In-house conveyancing lawyers and technical professionals review and clear each listing.</li>
+            <li>Buyers, Sellers and Agents transact under documented, supervised processes from offer to completion.</li>
+          </ul>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="register.html" class="btn-primary">Get Started – Register Now</a>
+            <a href="register.html#professional" class="btn-primary" >Join as a Legal / Technical Professional</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- SELLER FLOW -->
+  <section class="section">
+    <div class="container">
+      <h3>1. Modus Operandi for Sellers</h3>
+      <p>
+        Sellers (owners or authorized agents) execute an online Power of Attorney
+        appointing Safe Buy Realties Limited as the donee to:
+      </p>
+      <ul>
+        <li>Ascertain and describe the property and its survey details.</li>
+        <li>Secure buyers and perfect all steps necessary for sale.</li>
+        <li>Sell and alienate the property and remit sale proceeds to the
+            seller’s designated account.</li>
+        <li>Authorize deduction of 10% brokerage/commission from source.</li>
+      </ul>
+      <p>
+        The Power of Attorney is irrevocable and signed, sealed and delivered
+        by the Donor(s) in the presence of a witness.
+      </p>
+
+      <h4>Seller / Agent Information Collected</h4>
+      <ul>
+        <li>Full name, age, residential and office address</li>
+        <li>Phone number, email address</li>
+        <li>Valid ID (Driver’s Licence, National ID, PVC, International Passport)</li>
+        <li>Passport photograph</li>
+      </ul>
+
+      <h4>About the Property to be Sold or Leased</h4>
+      <ul>
+        <li>Size of land</li>
+        <li>Type of property</li>
+        <li>Full description and location</li>
+        <li>Owner’s name</li>
+        <li>Title documents available</li>
+        <li>Survey plan number</li>
+        <li>Final purchase price</li>
+        <li>Valuation report details</li>
+      </ul>
+
+      <h4>Documents Uploaded by Seller</h4>
+      <ul>
+        <li>Photocopy of survey plan</li>
+        <li>Photocopy of title documents (C of O, registered title)</li>
+        <li>Valuation report</li>
+        <li>Locational sketch</li>
+        <li>Purchase receipt</li>
+        <li>Property photos (front, rear, sides, interior, aerial if available)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BUYER FLOW -->
+  <section class="section soft-bg">
+    <div class="container">
+      <h3>2. Modus Operandi for Buyers</h3>
+      <p>
+        Once a buyer finds a desired property on the platform, the buyer also
+        executes an online Power of Attorney appointing Safe Buy Realties Limited
+        to:
+      </p>
+      <ul>
+        <li>Supervise the purchase of the selected property.</li>
+        <li>Secure and perfect all steps necessary for purchase.</li>
+        <li>Receive and disburse purchase price to the seller/owner.</li>
+        <li>Deduct 10% brokerage/commission from source.</li>
+      </ul>
+
+      <h4>Buyer Information Collected</h4>
+      <ul>
+        <li>Full name</li>
+        <li>Age</li>
+        <li>Residential address</li>
+        <li>Phone number</li>
+        <li>Email address</li>
+      </ul>
+
+      <h4>Details of Property Picked by the Buyer</h4>
+      <ul>
+        <li>Land size and property type</li>
+        <li>Full description and location</li>
+        <li>Owner’s name as seen on the website</li>
+        <li>Documents viewed on the website</li>
+        <li>Survey plan number viewed</li>
+        <li>Final purchase price</li>
+        <li>Buyer’s acceptance of price and valuation (via tick boxes)</li>
+      </ul>
+
+      <h4>Meeting with Safe Buy Realties Team</h4>
+      <p>
+        A meeting (physical or virtual) is scheduled between the buyer and
+        Safe Buy Realties team to finalize instructions, timelines and next steps.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRE-BUY & POST-BUY -->
+  <section class="section">
+    <div class="container">
+      <h3>3. Steps to Take Before Buying</h3>
+      <ul>
+        <li>Conduct due diligence.</li>
+        <li>Search at the Land Registry.</li>
+        <li>Search at the Surveyor-General’s office to confirm area is not acquired.</li>
+        <li>Court search for pending suits.</li>
+        <li>Corporate Affairs Commission (CAC) search (where applicable).</li>
+        <li>Physical inspection of the property.</li>
+        <li>Independent valuation by buyer (optional).</li>
+      </ul>
+
+      <h3>4. Steps After Meeting of Minds</h3>
+      <ul>
+        <li>Preparation and franking of title documents.</li>
+        <li>Payment and receipts.</li>
+        <li>Physical possession/hand-over.</li>
+        <li>Preparation of survey plan if required.</li>
+        <li>Perfection of title documents at the Land Registry.</li>
+      </ul>
+    </div>
+  </section>
+
+
+</body>
+</html>
+<!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Contact</h3>
+        <p>Lagos, Nigeria</p>
+        <p>Email: hello@safebuyrealties.com</p>
+      </div>
+
+      <div>
+        <p class="footer-copy">
+          © <span id="year"></span> Safe Buy Realties. All rights reserved.
+          <a href="terms.html" style="color:#9ca3af; text-decoration:underline; margin-left:0.4rem;">
+            Terms &amp; Conditions
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
